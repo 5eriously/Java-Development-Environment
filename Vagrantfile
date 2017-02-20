@@ -10,13 +10,17 @@ Vagrant.configure("2") do |config|
   config.vm.box = "chad-thompson/ubuntu-trusty64-gui"
 
   config.vm.network :forwarded_port, guest: 22, host: 2345
+  
+  config.vm.synced_folder "C:\Users\RyanO\OneDrive\University\CITS1001", "/work"
 
-  #manual login thus easy password 
-  config.ssh.password = "1234"
+  config.vm.provision :shell, path: "setup.sh"
 
   config.vm.provider "virtualbox" do |v|
-    v.memory = 2048
-    v.cpus = 2
+    v.memory = 4096 #the amount of ram in mb
+    v.cpus = 2 #how many cpus
+    v.gui = true #i would like a gui please
   end
 
 end
+
+
