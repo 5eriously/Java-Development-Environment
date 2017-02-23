@@ -11,5 +11,13 @@ sudo apt-get install maven -y -q
 wget $link -O eclipse -q
 #extract eclipse
 tar -xvzf $filename
+#install better desktop
+sudo apt-get install plasma-desktop -y -q
+#uninstall unity
+sud apt-get remove unity -y -q 
+#reinstall file browser
+sudo apt-get install -y -q 
 #finish
 echo done
+#reboot
+sudo reboot

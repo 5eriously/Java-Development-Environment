@@ -11,13 +11,13 @@ Vagrant.configure("2") do |config|
 
   config.vm.network :forwarded_port, guest: 22, host: 2345
   
-  config.vm.synced_folder "C:\Users\RyanO\OneDrive\University\CITS1001", "/work"
+  config.vm.synced_folder "C:\\Users\\RyanO\\OneDrive\\University\\CITS1001", "/work"
 
   config.vm.provision :shell, path: "setup.sh"
 
   config.vm.provider "virtualbox" do |v|
-    v.memory = 4096 #the amount of ram in mb
-    v.cpus = 2 #how many cpus
+    v.memory = 2048 #the amount of ram in mb
+    v.cpus = 1 #how many cpus
     v.gui = true #i would like a gui please
   end
 
